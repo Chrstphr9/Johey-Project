@@ -1,0 +1,368 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./img/8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 150vh, 100vw;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+    padding: 20px;
+    position: relative; /* Necessary for positioning floating images */
+}
+
+
+/* @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
+/* Container */
+/* .container {
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+} */
+
+/* Title */
+.birthday-message h1, p {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: #fff9e6;
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4); }
+    to { text-shadow: 8px 8px 18px rgba(255, 255, 255, 0.8); }
+}
+
+/* General Button Styling */
+.link {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects */
+.link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+}
+
+/* Ripple Effect */
+.link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+
+.link:active::before {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+}
+
+
+/* Subtitle */
+.birthday-message p {
+    font-size: 1.8rem;
+    color: #ffeedd;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Balloons */
+.balloons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.balloons img {
+    width: 120px;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease;
+}
+
+.balloons img:hover {
+    transform: scale(1.2);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px) rotate(10deg); }
+    100% { transform: translateY(0); }
+}
+
+/* Floating Photos Section */
+.floating-photos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Individual photo positioning */
+/* Floating Photos Section */
+.floating-photos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents obstruction of interactive elements */
+    z-index: 1; /* Positioned behind text and other content */
+}
+
+.photo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.8; /* Slightly transparent */
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    opacity: 1; /* Full opacity on hover */
+}
+
+/* Specific Photo Positions */
+.photo1 {
+    top: 5%;
+    left: 5%;
+    transform: rotate(-8deg);
+}
+
+.photo2 {
+    top: 10%;
+    right: 5%;
+    transform: rotate(5deg);
+}
+
+.photo3 {
+    bottom: 10%;
+    left: 10%;
+    transform: rotate(-5deg);
+}
+
+.photo4 {
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(10deg);
+}
+
+/* Main Content Z-Index */
+.birthday-message, 
+.balloons, 
+.click-me-btn {
+    z-index: 2; /* Ensures these elements are above the photos */
+    position: relative;
+}
+
+
+/* Click Me Button */
+.click-me-btn {
+    margin-top: 50px;
+    padding: 15px 35px;
+    font-size: 1.7rem;
+    background: linear-gradient(45deg, #ff6384, #ff9f40);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.click-me-btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff1c6b, #ffce56);
+}
+
+/* Confetti Styling */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.7;
+    transform: rotate(15deg);
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .birthday-message h1 {
+        font-size: 4rem;
+    }
+
+    .birthday-message p {
+        font-size: 1.8rem;
+    }
+
+    .photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .birthday-message h1 {
+        font-size: 3rem;
+    }
+
+    .birthday-message p {
+        font-size: 1.5rem;
+    }
+
+    .click-me-btn {
+        font-size: 1.5rem;
+        padding: 12px 30px;
+    }
+
+    .balloons img {
+        width: 100px;
+    }
+
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .birthday-message h1 {
+        font-size: 2.5rem;
+    }
+
+    .birthday-message p {
+        font-size: 1.3rem;
+    }
+
+    .click-me-btn {
+        font-size: 1.3rem;
+        padding: 10px 25px;
+    }
+
+    .balloons img {
+        width: 80px;
+    }
+
+    .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Adjusting positions for smaller screens */
+    .photo1 {
+        top: 5%;
+        left: 5%;
+        transform: rotate(-8deg);
+    }
+
+    .photo2 {
+        top: 15%;
+        right: 8%;
+        transform: rotate(5deg);
+    }
+
+    .photo3 {
+        bottom: 8%;
+        left: 10%;
+        transform: rotate(-3deg);
+    }
+
+    .photo4 {
+        bottom: 12%;
+        right: 10%;
+        transform: rotate(8deg);
+    }
+}
