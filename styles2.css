@@ -1,0 +1,65 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./img/8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 150vh, 100vw;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+    padding: 20px;
+    position: relative; /* Necessary for positioning floating images */
+}
+
+.link {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects */
+.link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+}
+
+/* Ripple Effect */
+.link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+
+.link:active::before {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+}
+ h1 {
+    color: white
+ }
